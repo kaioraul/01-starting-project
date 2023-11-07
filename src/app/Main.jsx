@@ -1,20 +1,17 @@
 import CoreConcepts from "./Main/CoreConcepts/CoreConcept";
-import componentsImg from "./Main/components.png";
+import { CORE_CONCEPTS } from "./Main/CoreConcepts/CORE_CONCEPTS";
 
 export default function Main() {
+  const addCoreConcepts = () => {
+    for (let concept = 0; concept < CORE_CONCEPTS.length; concept++) {
+      return <CoreConcepts {...CORE_CONCEPTS[concept]} />;
+    }
+  };
+
   return (
     <section id="core-concepts">
       <header>Core concepts</header>
-      <ul>
-        <CoreConcepts
-          title="Concepts"
-          description="The core UI building block."
-          image={componentsImg}
-          alt="Components image"
-        />
-        <CoreConcepts />
-        <CoreConcepts />
-      </ul>
+      <ul>{addCoreConcepts()}</ul>
     </section>
   );
 }
