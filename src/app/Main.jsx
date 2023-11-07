@@ -1,4 +1,4 @@
-import CoreConcepts from "./Main/CoreConcept";
+import CoreConcepts from "./Main/CoreConcepts/CoreConcept";
 import componentsImg from "./Main/components.png";
 
 export default function Main() {
