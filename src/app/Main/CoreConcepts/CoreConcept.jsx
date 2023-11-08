@@ -1,9 +1,11 @@
+import "./core-concepts.css";
+
 export default function CoreConcepts({ image, title, description }) {
   return (
-    <div>
+    <li>
       <img src={image} alt={title} />
-      <header>{title}</header>
+      <h3>{title}</h3>
       <p>{description}</p>
-    </div>
+    </li>
   );
 }

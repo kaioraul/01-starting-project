@@ -1,4 +1,5 @@
-import reactImg from "./Header/react-core-concepts.png";
+import reactImg from "../../assets/images/react-core-concepts.png";
+import "./header.css";
 
 export default function Header() {
   function genRandomInt(max) {
