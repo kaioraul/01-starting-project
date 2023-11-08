@@ -14,6 +14,8 @@ export default function Main() {
     }
   };
 
+  const handleClick = () => {};
+
   return (
     <main>
       <section id="core-concepts">
@@ -23,10 +25,10 @@ export default function Main() {
       <section id="examples">
         <h2>Examples</h2>
         <menu>
-          <TabButton>Components</TabButton>
-          <TabButton>JSX</TabButton>
-          <TabButton>Props</TabButton>
-          <TabButton>State</TabButton>
+          <TabButton noClick={handleClick}>Components</TabButton>
+          <TabButton noClick={handleClick}>JSX</TabButton>
+          <TabButton noClick={handleClick}>Props</TabButton>
+          <TabButton noClick={handleClick}>State</TabButton>
         </menu>
       </section>
     </main>
