@@ -3,11 +3,24 @@ import { EXAMPLES } from "./EXAMPLES.js";
 import { useState } from "react";
 
 export function Examples() {
-  const [SelectedTopic, setSelectedTopic] = useState("components");
+  const [selectedTopic, setSelectedTopic] = useState();
 
   const handleClickTabButton = (clickedButton) => {
     setSelectedTopic(clickedButton);
   };
+  let tabContent = <p>Please, select a topic.</p>;
+
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
 
   return (
     <section id="examples">
@@ -24,13 +37,7 @@ export function Examples() {
           State
         </TabButton>
       </menu>
-      <div id="tab-content">
-        <h3>{EXAMPLES[SelectedTopic].title}</h3>
-        <p>{EXAMPLES[SelectedTopic].description}</p>
-        <pre>
-          <code>{EXAMPLES[SelectedTopic].code}</code>
-        </pre>
-      </div>
+      {tabContent}
     </section>
   );
 }
